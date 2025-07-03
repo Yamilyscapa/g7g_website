@@ -1,11 +1,611 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
-	<Welcome />
+	<section class="hero container">
+		<div class="text_container">
+			<h1>
+				Porque tu <span class="highlight">tranquilidad</span> y la de tu
+				familia no tiene precio
+			</h1>
+			<p>
+				Te ofrecemos soluciones de protección y aseguramiento
+				personalizadas para que tengas tranquilidad y seguridad.
+			</p>
+
+			<div class="button_wrapper">
+				<a class="btn btn_primary" href="https://wa.me/5212221234567" target="_blank">Cotiza via WhatsApp</a>
+			</div>
+		</div>
+		<div class="hero_preview">
+			<ServiceCard
+				pre="Seguros"
+				title="Vehiculares"
+				color="#f9e3e2"
+				href="/seguros/vehiculares"
+			/>
+			<ServiceCard
+				pre="Seguro de"
+				title="Gastos medicos"
+				color="#dee9fc"
+				href="/seguros/gastos-medicos"
+			/>
+			<ServiceCard
+				pre="Seguro de"
+				title="Vida"
+				color="#e2fbe8"
+				href="/seguros/vida"
+			/>
+			<ServiceCard title="Ver más +" border="#00000020" href="/#seguros" />
+
+			<!-- <div class="button_wrapper">
+				<a class="btn btn_primary">Ver más</a>
+			</div> -->
+		</div>
+	</section>
+
+	<section class="about container">
+		<div class="about_content">
+			<div class="about_intro">
+				<h2>
+					En GZG Seguros llevamos más de <span class="highlight"
+						>57 años</span
+					> ayudando a proteger lo que más valoras.
+				</h2>
+				<p class="about_text">
+					Nuestra experiencia, trato cercano y respaldo de grandes
+					aseguradoras nos permiten darte tranquilidad en cada paso.
+				</p>
+				<p class="about_emphasis">
+					Porque cuando se trata de cuidar tu futuro, la confianza lo
+					es todo.
+				</p>
+			</div>
+
+			<div class="solutions_section" id="seguros">
+				<h3>Soluciones a tu medida</h3>
+				<p class="solutions_intro">
+					Sabemos que cada persona y empresa es diferente, por eso te
+					ofrecemos soluciones a tu medida:
+				</p>
+				<div class="solutions_grid">
+					<div class="solution_item">
+						<h4>Seguros para flotillas</h4>
+						<p>
+							Protección integral para tu flota vehicular
+							empresarial
+						</p>
+					</div>
+					<div class="solution_item">
+						<h4>Gastos médicos</h4>
+						<p>Cobertura médica completa para ti y tu familia</p>
+					</div>
+					<div class="solution_item">
+						<h4>Accidentes escolares</h4>
+						<p>
+							Protección para estudiantes durante actividades
+							escolares
+						</p>
+					</div>
+					<div class="solution_item">
+						<h4>Estudios universitarios</h4>
+						<p>
+							Seguro educativo para garantizar la continuidad
+							académica
+						</p>
+					</div>
+					<div class="solution_item">
+						<h4>Jubilación</h4>
+						<p>Planifica tu futuro con nuestros planes de retiro</p>
+					</div>
+					<div class="solution_item">
+						<h4>Mercancías</h4>
+						<p>
+							Protección para el transporte y almacenamiento de
+							mercancías
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="partners_section">
+				<div class="partners_group">
+					<h4>Contamos con convenios directos con:</h4>
+					<div class="partners_grid">
+						<span>Afirme</span>
+						<span>Ana</span>
+						<span>HDI</span>
+						<span>Insignia Life</span>
+						<span>BX+</span>
+						<span>HIR</span>
+						<span>Bupa</span>
+						<span>Qualitas</span>
+						<span>GP Mutual</span>
+						<span>Potosí</span>
+						<span>Zurich</span>
+						<span>Primero Seguros</span>
+						<span>La Latino</span>
+					</div>
+				</div>
+
+				<div class="partners_group">
+					<h4>Y alianzas estratégicas con:</h4>
+					<div class="partners_grid">
+						<span>MAPFRE</span>
+						<span>Allianz</span>
+						<span>Banorte</span>
+						<span>GMX</span>
+						<span>ABA</span>
+						<span>Sura</span>
+						<span>Atlas</span>
+						<span>La Patrimonial</span>
+						<span>GNP</span>
+						<span>Y muchas más</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="commitment_section">
+				<p class="commitment_text">
+					Con nosotros, estás respaldado por lo mejor del sector
+					asegurador.
+				</p>
+				<p class="commitment_emphasis">
+					Tu tranquilidad es nuestro compromiso.
+				</p>
+			</div>
+		</div>
+	</section>
+	<Footer />
 </Layout>
+
+<style lang="scss">
+	@import "../styles/variables";
+
+	
+	// Hero Section
+	section.hero {
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 3rem;
+		margin-bottom: 2rem;
+
+		// Breakpoint 1200px
+		@media (max-width: 1200px) {
+			flex-wrap: wrap;
+			min-height: auto;
+			margin-bottom: 4rem;
+			padding-top: 12rem !important; // Extra breathing space for tablet/smaller desktop
+		}
+
+		// Breakpoint 800px
+		@media (max-width: 800px) {
+			flex-direction: column;
+			margin-bottom: 3rem;
+			padding-top: 8rem !important; // Reduced padding for mobile
+		}
+	}
+
+	.text_container {
+		line-height: 1.2;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+
+		h1 {
+			font-size: 3rem;
+			font-weight: 700;
+			margin-bottom: 1.25rem;
+
+			.highlight {
+				color: #3662e3;
+			}
+		}
+
+		p {
+			font-size: 1rem;
+			font-weight: 400;
+			color: #666;
+			line-height: 1.5;
+			margin-bottom: 2.5rem;
+		}
+	}
+
+	.hero_preview {
+		height: 300px;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		gap: 1rem;
+
+		.button_wrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			a {
+				width: 80%;
+				text-align: center;
+			}
+		}
+
+		// Breakpoint 1200px
+		@media (max-width: 1200px) {
+			width: 100%;
+			height: auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			gap: 1rem;
+			margin: 2rem 0;
+		}
+
+		// Breakpoint 800px
+		@media (max-width: 800px) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: auto;
+			gap: 1.5rem;
+			margin: 1.5rem 0;
+			width: 100%;
+		}
+
+		// Breakpoint 600px - Single column for very small screens
+		@media (max-width: 600px) {
+			grid-template-columns: 1fr;
+			gap: 1.2rem;
+			width: 100%;
+		}
+	}
+
+	// About Section
+	section.about {
+		padding: 4rem 0;
+
+		.about_content {
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+
+		// Mobile styles
+		@media (max-width: 800px) {
+			padding: 3rem 0;
+
+			.about_content {
+				padding: 0 1rem;
+			}
+		}
+
+		@media (max-width: 480px) {
+			padding: 2rem 0;
+
+			.about_content {
+				padding: 0 0.75rem;
+			}
+		}
+	}
+
+	section.about .about_intro {
+		text-align: center;
+		margin-top: 4rem !important; // Breathing room between hero and about sections
+		margin-bottom: 4rem;
+
+		h2 {
+			font-size: 2.8rem;
+			font-weight: 700;
+			margin-bottom: 2rem;
+			line-height: 1.2;
+
+			.highlight {
+				color: #3662e3;
+			}
+
+			@media (max-width: 800px) {
+				font-size: 2rem;
+				margin-bottom: 1.5rem;
+			}
+
+			@media (max-width: 480px) {
+				font-size: 1.5rem;
+			}
+		}
+
+		.about_text {
+			font-size: 1.25rem;
+			line-height: 1.6;
+			color: #333;
+			margin-bottom: 1.5rem;
+			max-width: 800px;
+			margin-left: auto;
+			margin-right: auto;
+
+			@media (max-width: 800px) {
+				font-size: 1.1rem;
+				margin-bottom: 1rem;
+			}
+
+			@media (max-width: 480px) {
+				font-size: 0.9rem;
+			}
+		}
+
+		.about_emphasis {
+			font-size: 1.1rem;
+			font-weight: 600;
+			color: #3662e3;
+			font-style: italic;
+
+			@media (max-width: 800px) {
+				font-size: 1rem;
+			}
+
+			@media (max-width: 480px) {
+				font-size: 0.9rem;
+			}
+		}
+
+		@media (max-width: 800px) {
+			margin-top: 3rem !important; // Reduced breathing room for mobile
+			margin-bottom: 3rem;
+		}
+
+		@media (max-width: 480px) {
+			margin-top: 2rem !important; // Minimal breathing room for small screens
+		}
+	}
+
+	.solutions_section {
+		margin-bottom: 4rem;
+		text-align: center;
+		position: relative;
+		padding: 4rem 2rem;
+		border-radius: 24px;
+
+		// Decorative element
+		&::before {
+			content: '';
+			position: absolute;
+			top: -2px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 60px;
+			height: 4px;
+			border-radius: 2px;
+		}
+
+		h3 {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-bottom: 1rem;
+			color: #1a2238;
+			position: relative;
+			
+			// Subtle text shadow for depth
+			text-shadow: 0 2px 4px rgba(54, 98, 227, 0.1);
+
+			// Decorative underline
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: -8px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 80px;
+				height: 3px;
+				border-radius: 2px;
+			}
+
+			@media (max-width: 800px) {
+				font-size: 2rem;
+			}
+
+			@media (max-width: 480px) {
+				font-size: 1.6rem;
+			}
+		}
+
+		.solutions_intro {
+			font-size: 1.2rem;
+			line-height: 1.7;
+			color: #4a5568;
+			margin: 2.5rem auto 3.5rem;
+			max-width: 700px;
+			font-weight: 400;
+
+			@media (max-width: 800px) {
+				font-size: 1.1rem;
+				margin: 2rem auto 2.5rem;
+			}
+
+			@media (max-width: 480px) {
+				font-size: 1rem;
+				margin: 1.5rem auto 2rem;
+			}
+		}
+
+		@media (max-width: 800px) {
+			padding: 3rem 1.5rem;
+		}
+
+		@media (max-width: 480px) {
+			padding: 2.5rem 1rem;
+		}
+
+	}
+
+	.partners_section {
+		margin-bottom: 4rem;
+
+		.partners_group {
+			margin-bottom: 3rem;
+
+			h4 {
+				font-size: 1.6rem;
+				font-weight: 600;
+				margin-bottom: 1.5rem;
+				color: #333;
+				text-align: center;
+
+				@media (max-width: 800px) {
+					font-size: 1.4rem;
+				}
+
+				@media (max-width: 480px) {
+					font-size: 1.2rem;
+				}
+			}
+
+			.partners_grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 1rem;
+				max-width: 1000px;
+				margin: 0 auto;
+
+				span {
+					background: #f8f9fa;
+					padding: 1rem;
+					border-radius: 8px;
+					text-align: center;
+					font-weight: 500;
+					color: #333;
+					border: 1px solid #e9ecef;
+					transition: all 0.3s ease;
+
+					&:hover {
+						background: #3662e3;
+						color: white;
+						transform: translateY(-2px);
+						box-shadow: 0 4px 12px rgba(54, 98, 227, 0.3);
+					}
+
+					@media (max-width: 800px) {
+						padding: 0.75rem;
+						font-size: 0.9rem;
+					}
+
+					@media (max-width: 480px) {
+						padding: 0.75rem 0.5rem;
+						font-size: 0.8rem;
+					}
+				}
+
+				@media (max-width: 800px) {
+					grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+					gap: 0.75rem;
+				}
+
+				@media (max-width: 480px) {
+					grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+					gap: 0.5rem;
+				}
+			}
+		}
+	}
+
+	.commitment_section {
+		text-align: center;
+		padding: 3rem 2rem;
+		background: #fff;
+		box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.009);
+		border-radius: 16px;
+		margin: 2rem 0;
+
+		.commitment_text {
+			font-size: 1.3rem;
+			font-weight: 500;
+			color: #333;
+			margin-bottom: 1rem;
+
+			@media (max-width: 800px) {
+				font-size: 1.1rem;
+			}
+
+			@media (max-width: 480px) {
+				font-size: 1rem;
+			}
+		}
+
+		.commitment_emphasis {
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: #3662e3;
+
+			@media (max-width: 800px) {
+				font-size: 1.3rem;
+			}
+
+			@media (max-width: 480px) {
+				font-size: 1.2rem;
+			}
+		}
+
+		@media (max-width: 800px) {
+			padding: 2.5rem 1.5rem;
+		}
+
+		@media (max-width: 480px) {
+			padding: 2rem 1rem;
+		}
+	}
+
+	// Global Container
+	.container {
+		padding: 0 10vw;
+
+		@media (max-width: 600px) {
+			padding: 0 1rem;
+		}
+	}
+
+	// Solution item specific mobile fixes
+	@media (max-width: 600px) {
+		.solution_item {
+			width: 100%;
+			box-sizing: border-box;
+		}
+	}
+
+	.solutions_grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+		max-width: 1000px;
+		margin: 0 auto;
+
+		@media (max-width: 800px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (max-width: 500px) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.solution_item {
+		background: #fff;
+		padding: 2rem 1.5rem;
+		border-radius: 12px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		text-align: center;
+
+		h4 {
+			font-size: 1.2rem;
+			font-weight: 600;
+			color: #333;
+			margin-bottom: 0.5rem;
+		}
+
+		p {
+			font-size: 0.9rem;
+			color: #666;
+			line-height: 1.4;
+		}
+	}
+</style>

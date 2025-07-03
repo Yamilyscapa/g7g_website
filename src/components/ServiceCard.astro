@@ -1,0 +1,54 @@
+---
+const { pre, title, color, border, href } = Astro.props;
+---
+
+<a
+    class="service_card"
+    style={`--color: ${color}; --border: ${border};`}
+    href={href}
+>
+    <p>{pre}</p>
+    <h2>{title}</h2>
+</a>
+
+<style lang="scss">
+    .service_card {
+        background: var(--color);
+        height: 100%;
+        width: 220px;
+        min-height: 120px;
+        border: 1px dashed var(--border);
+        border-radius: 10px;
+        display: flex;
+        padding: 0 2rem;
+        flex-direction: column;
+        justify-content: center;
+        transition: all 0.2s ease-in-out;
+        text-decoration: none;
+        color: #000;
+        flex-grow: 1;
+
+        @media (max-width: 800px) {
+            width: 100%;
+            min-height: 140px;
+        }
+
+        p {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #666;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            opacity: 0.8;
+        }
+
+        &:hover {
+            cursor: pointer;
+            scale: 1.05;
+            box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease-in-out;
+        }
+    }
+</style>
