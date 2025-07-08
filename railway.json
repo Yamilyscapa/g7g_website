@@ -1,0 +1,13 @@
+{
+  "build": {
+    "installCommand": "npm install",
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist"
+  },
+  "deploy": {
+    "dockerfile": false
+  },
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
